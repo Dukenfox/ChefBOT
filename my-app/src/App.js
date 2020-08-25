@@ -1,11 +1,12 @@
 import React from "react";
 import StartpageNav from "./StartpageNav";
 import Header from "./Header";
-import IngredientPage from "./IngredientPage";
+import IngredientList from "./IngredientList";
 import Recipe from "./Recipe";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   return (
     <Router className="App">
@@ -15,7 +16,7 @@ function App() {
           <Header />
         </Route>
         <Route path="/ingredients">
-          <IngredientPage />
+          <IngredientList />
         </Route>
         <Route path="/recipe">
           <Recipe />

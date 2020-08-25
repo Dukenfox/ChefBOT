@@ -13,7 +13,7 @@ function IngredientCount() {
   }
 
   return (
-    <div>
+    <div className="IngredientCount">
       <h3>{count}</h3>
       <Button onClick={decrease}>-</Button>
       <Button onClick={increase}>+</Button>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Roboto;
 }
 
 .App-logo {
@@ -7,7 +8,6 @@
   pointer-events: none;
   padding: 0%;
 }
-
 
 .App-header {
   background-color: #6679ad;
@@ -21,16 +21,26 @@
 }
 
 .App-Button {
-background-color: #6679ad;
-min-height: 5vh;
-font-size: calc(2vmin);
-display: flex;
-align-items: center;
-justify-content: center;
+  background-color: #6679ad;
+  min-height: 5vh;
+  font-size: calc(2vmin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+a {
+  text-decoration: none;
+  color: ivory;
+}
+
+a:hover {
+  text-decoration: none;
+  color: ivory;
 }
 
 @keyframes App-logo-spin {
@@ -40,4 +50,30 @@ justify-content: center;
   to {
     transform: rotate(360deg);
   }
+}
+
+.form {
+  max-width: 60vw;
+}
+
+.IngredientsPage {
+  min-height: 100vh;
+  background-color: #6679ad;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.IngredientRow {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  max-width: 60vw;
+}
+
+.IngredientCount {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

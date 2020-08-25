@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ToDoItem from "./ToDoItem";
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ToDoItem from "./IngredientRow";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import IngredientRow from "./IngredientRow";
 
 function IngredientList() {
   const [inputText, setInputText] = useState("");
@@ -13,14 +14,14 @@ function IngredientList() {
   }
 
   function addItem() {
-    setItems(prevItems => {
+    setItems((prevItems) => {
       return [...prevItems, inputText];
     });
     setInputText("");
   }
 
   function deleteItem(id) {
-    setItems(prevItems => {
+    setItems((prevItems) => {
       return prevItems.filter((item, index) => {
         return index !== id;
       });
@@ -28,28 +29,21 @@ function IngredientList() {
   }
 
   return (
-    <div className="container">
-      <div className="heading">
-        <h1>Add Ingredients</h1>
-      </div>
-      <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
-      </div>
-      <div>
-        <ul>
+    <div className="IngredientsPage">
+        <div className="heading">
+          <h1>Add Ingredients</h1>
+        </div>
+        <div className="form">
+          <input onChange={handleChange} type="text" value={inputText} />
+          <button onClick={addItem}>
+            <span>Add</span>
+          </button>
+        </div>
+        <div className="IngredientContainer">
           {items.map((todoItem, index) => (
-            <ToDoItem
-              key={index}
-              id={index}
-              text={todoItem}
-              onChecked={deleteItem}
-            />
+            <IngredientRow key={index} id={index} text={todoItem} />
           ))}
-        </ul>
-      </div>
+        </div>
     </div>
   );
 }
