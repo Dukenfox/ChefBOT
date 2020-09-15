@@ -77,3 +77,41 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.card {
+  border-radius: 25px;
+  position: relative;
+  padding: 50px 10px;
+  background-color: #343a40 !important;
+  height: 200px;
+  width: auto;
+  box-shadow: 0 2px 5px #56556e;
+  text-align: left;
+  margin: 20px 20px 20px;
+}
+
+.recipePage {
+  background-color: #6679ad;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+  color: white;
+}
+
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: auto;
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+
+.circle-img {
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}

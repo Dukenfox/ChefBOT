@@ -3,6 +3,7 @@ import ToDoItem from "./IngredientRow";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import IngredientRow from "./IngredientRow";
+import { BrowserRouter as Link } from "react-router-dom";
 
 function IngredientList() {
   const [inputText, setInputText] = useState("");
@@ -30,20 +31,25 @@ function IngredientList() {
 
   return (
     <div className="IngredientsPage">
-        <div className="heading">
-          <h1>Add Ingredients</h1>
-        </div>
-        <div className="form">
-          <input onChange={handleChange} type="text" value={inputText} />
-          <button onClick={addItem}>
-            <span>Add</span>
-          </button>
-        </div>
-        <div className="IngredientContainer">
-          {items.map((todoItem, index) => (
-            <IngredientRow key={index} id={index} text={todoItem} />
-          ))}
-        </div>
+      <div className="heading">
+        <h1>Add Ingredients</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={inputText} />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div className="IngredientContainer">
+        {items.map((todoItem, index) => (
+          <IngredientRow key={index} id={index} text={todoItem} />
+        ))}
+      </div>
+      {items.length != 0 && (
+        <a href="/recipe">
+          <Button>GENERATE RECIPE</Button>
+        </a>
+      )}
     </div>
   );
 }

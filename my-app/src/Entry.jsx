@@ -2,11 +2,9 @@ import React from "react";
 
 function Entry(props) {
   return (
-    <div className="">
+    <div className="card">
       <dt>
-        <span className="" role="" aria-label="">
-          {props.icon}
-        </span>
+        <img src={props.icon} className="circle-img"></img>
         <span>{props.name}</span>
       </dt>
       <dd>{props.description}</dd>
